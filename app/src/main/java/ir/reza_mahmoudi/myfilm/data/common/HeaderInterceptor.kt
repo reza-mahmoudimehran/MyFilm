@@ -1,4 +1,4 @@
-package ir.reza_mahmoudi.myfilm.data.remote
+package ir.reza_mahmoudi.myfilm.data.common
 
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,4 +1,4 @@
-package ir.reza_mahmoudi.myfilm.domain.entity
+package ir.reza_mahmoudi.myfilm.domain.search.entity
 
 import com.google.gson.annotations.SerializedName
 

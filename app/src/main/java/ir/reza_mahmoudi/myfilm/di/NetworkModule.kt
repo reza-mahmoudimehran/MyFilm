@@ -4,8 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ir.reza_mahmoudi.myfilm.data.remote.HeaderInterceptor
-import ir.reza_mahmoudi.myfilm.data.remote.SearchApi
+import ir.reza_mahmoudi.myfilm.data.common.HeaderInterceptor
 import ir.reza_mahmoudi.myfilm.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -44,11 +43,5 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideSearchApi(retrofit: Retrofit): SearchApi {
-        return retrofit.create(SearchApi::class.java)
     }
 }

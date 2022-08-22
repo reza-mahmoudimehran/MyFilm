@@ -24,10 +24,15 @@ class SearchFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        initViews()
         observeViewModel()
     }
+    private fun initViews(){
+        binding.searchButton.setOnClickListener {
+            viewModel.searchMovie(binding.searchText.text.toString())
+        }
+    }
     private fun observeViewModel(){
-        viewModel.searchMovie("car")
         viewModel.movieList.observe(viewLifecycleOwner){
             showLog("searchMovie List",it.toString())
         }

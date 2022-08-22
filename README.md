@@ -1,4 +1,4 @@
-# Udemika 
+# MyFilm
 MyFilm is a test android app that makes use of the [Filimo](https://https://www.filimo.com/) API for search. 
 This app showcases the MVVM pattern, Coroutine, Hilt and Clean Architecture approach.
 

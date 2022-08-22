@@ -4,13 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 data class MovieItem (
     @SerializedName("movie_id")
-    val id: Double,
+    val id: Int,
     @SerializedName("movie_title")
-    val title: Double,
+    val title: String,
     @SerializedName("descr")
-    val description: Double,
+    val description: String,
+    @SerializedName("pic")
+    val pictures: Pictures,
     @SerializedName("rate_avrage")
     val rate: Double,
     @SerializedName("publish_date")
-    val publishDate: Double
+    val publishDate: String
 )

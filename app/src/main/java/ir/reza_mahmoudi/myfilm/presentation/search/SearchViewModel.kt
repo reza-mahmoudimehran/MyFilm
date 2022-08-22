@@ -8,6 +8,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.reza_mahmoudi.myfilm.domain.search.entity.MovieItem
 import ir.reza_mahmoudi.myfilm.domain.search.usecase.SearchMovieUseCase
 import ir.reza_mahmoudi.myfilm.util.NetworkResult
+import ir.reza_mahmoudi.myfilm.util.showLog
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,7 +27,7 @@ class SearchViewModel @Inject constructor(
                             movieList.value = result.data!!
                         }
                         is NetworkResult.Error -> {
-                            Log.e("searchMovie Error",result.message.toString())
+                            showLog("searchMovie Error",result.message.toString())
                         }
                     }
                 }

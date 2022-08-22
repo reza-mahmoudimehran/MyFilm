@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="movie"
+            type="ir.reza_mahmoudi.myfilm.domain.search.entity.MovieItem" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/movieItemMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        app:cardElevation="@dimen/spacing_middle"
+        app:cardBackgroundColor="@color/black_700"
+        app:cardCornerRadius="@dimen/spacing_xmedium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/movie_image_width"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spacing_large"
+                app:cardElevation="@dimen/spacing_middle"
+                app:cardCornerRadius="@dimen/spacing_xmedium">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/coverImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    loadImage="@{movie.pictures.medium}"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/spacing_large">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.title}"
+                    style="@style/Title"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.description}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    style="@style/SubTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/publishDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@{movie.publishDate}"
+                    style="@style/MovieItemShape"
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginVertical="@dimen/spacing_medium"
+                    android:background="@drawable/back_movie_items"
+                    app:layout_constraintTop_toBottomOf="@+id/publishDate"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/star_off"
+                        android:tint="@color/amber_500" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        setDoubleToTextView="@{movie.rate}"
+                        style="@style/SubTitle" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

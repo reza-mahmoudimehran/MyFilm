@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <style name="Title">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/font_main</item>
+        <item name="android:textSize">@dimen/font_size_middle</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="SubTitle">
+        <item name="android:fontFamily">@font/font_main</item>
+        <item name="android:textSize">@dimen/font_size_medium</item>
+        <item name="android:textColor">@color/gray_100</item>
+        <item name="android:padding">@dimen/spacing_medium</item>
+    </style>
+
     <style name="Error">
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
@@ -25,5 +42,11 @@
         <item name="android:layout_marginStart">@dimen/spacing_middle</item>
         <item name="android:tint">@color/white_950</item>
         <item name="android:src">@android:drawable/ic_menu_search</item>
+    </style>
+
+    <style name="MovieItemShape" parent="SubTitle">
+        <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_medium</item>
+        <item name="android:background">@drawable/back_movie_items</item>
     </style>
 </resources>

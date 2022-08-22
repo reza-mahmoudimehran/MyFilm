@@ -28,8 +28,7 @@ class SplashFragment : Fragment() {
     }
     private fun goToHome(){
         lifecycleScope.launchWhenResumed {
-            // TODO change splash delay Time
-            delay(5)
+            delay(2000)
             findNavController().navigate(R.id.action_splashFragment_to_searchFragment)
         }
     }
